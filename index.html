@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Glosario alfabetico interactivo de la Estrategia de Atencion por Ciclos y la Caja de Herramientas. Educacion Complementaria, Corpoeducacion - Colsubsidio, 2026.">
+<meta name="author" content="Corpoeducacion - Colsubsidio">
+<meta property="og:title" content="Glosario de la Estrategia">
+<meta property="og:description" content="Los terminos de la Estrategia de Atencion por Ciclos y de la Caja de Herramientas, explicados en lenguaje claro.">
+<meta property="og:type" content="website">
+<title>Glosario de la Estrategia</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2316306B'/%3E%3Cpath d='M7 8.5A1.5 1.5 0 0 1 8.5 7H15v18H8.5A1.5 1.5 0 0 1 7 23.5z' fill='%23FFC72C'/%3E%3Cpath d='M25 8.5A1.5 1.5 0 0 0 23.5 7H17v18h6.5a1.5 1.5 0 0 0 1.5-1.5z' fill='%23FFFDF7'/%3E%3C/svg%3E">
+<style>
+  /* Base equivalente al entorno donde se diseno la pagina */
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  :root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+  img{max-width:100%}
+  [hidden]{display:none!important}
+</style>
+<style>
+/* Libro abierto: índice troquelado a la izquierda, pliego de papel a la derecha.
+   En móvil el troquel se vuelve una fila de pestañas sobre el pliego. */
+:root{
+  --papel:#FFFDF7;
+  --papel-hondo:#F6F1E4;
+  --papel-borde:#E4DCC8;
+  --tinta:#171E35;
+  --tinta-suave:#5B6480;
+  --azul:#16306B;
+  --azul-vivo:#2E5FA3;
+  --azul-tenue:#E7EDF8;
+  --amarillo:#FFC72C;
+  --amarillo-tenue:#FFF4D4;
+  --sombra:rgba(22,48,107,.10);
+  --f-libro:"Literata",Georgia,"Times New Roman",serif;
+  --f-ui:"Figtree","Segoe UI",system-ui,sans-serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --papel:#141B2E;
+    --papel-hondo:#1B2440;
+    --papel-borde:#2C3754;
+    --tinta:#E9EDF8;
+    --tinta-suave:#A3AFC9;
+    --azul:#9CBDF0;
+    --azul-vivo:#B6D0F7;
+    --azul-tenue:#1E2A49;
+    --amarillo:#FFD355;
+    --amarillo-tenue:#3A3115;
+    --sombra:rgba(0,0,0,.45);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --papel:#141B2E;
+  --papel-hondo:#1B2440;
+  --papel-borde:#2C3754;
+  --tinta:#E9EDF8;
+  --tinta-suave:#A3AFC9;
+  --azul:#9CBDF0;
+  --azul-vivo:#B6D0F7;
+  --azul-tenue:#1E2A49;
+  --amarillo:#FFD355;
+  --amarillo-tenue:#3A3115;
+  --sombra:rgba(0,0,0,.45);
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;background:var(--papel-hondo);color:var(--tinta);
+  font-family:var(--f-libro);font-size:16px;line-height:1.6;
+  padding-block:0 32px;
+}
+h1,h2,h3{margin:0;text-wrap:balance}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:3px solid var(--azul-vivo);outline-offset:2px;border-radius:4px}
+
+/* ── Cabecera ── */
+.tapa{
+  background:var(--azul);color:#fff;
+  padding:26px 20px 24px;
+  border-bottom:5px solid var(--amarillo);
+}
+.tapa-in{max-width:1180px;margin:0 auto;display:flex;flex-wrap:wrap;gap:18px;align-items:flex-end;justify-content:space-between}
+.marca{font-family:var(--f-ui);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--amarillo);font-weight:700;margin-bottom:8px}
+.tapa h1{font-size:clamp(28px,5.5vw,42px);line-height:1.1;font-weight:700;letter-spacing:-.015em}
+.tapa p{margin:9px 0 0;font-size:15px;color:#CBD8F0;max-width:52ch;line-height:1.5}
+.tema{
+  font-family:var(--f-ui);font-size:13px;font-weight:600;
+  background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.45);
+  border-radius:999px;padding:7px 16px;white-space:nowrap;
+}
+.tema:hover{border-color:var(--amarillo);color:var(--amarillo)}
+
+/* ── Barra de búsqueda ── */
+.barra{background:var(--azul-tenue);border-bottom:1px solid var(--papel-borde);padding:14px 20px}
+.barra-in{max-width:1180px;margin:0 auto;display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.busca{position:relative;flex:1 1 280px;min-width:0}
+.busca svg{position:absolute;left:13px;top:50%;transform:translateY(-50%);pointer-events:none}
+#q{
+  width:100%;font-family:var(--f-ui);font-size:15px;
+  padding:11px 14px 11px 40px;border-radius:999px;
+  border:1.5px solid var(--papel-borde);background:var(--papel);color:var(--tinta);
+}
+#q::placeholder{color:var(--tinta-suave)}
+.conteo{font-family:var(--f-ui);font-size:13.5px;color:var(--tinta-suave);white-space:nowrap}
+.conteo b{color:var(--azul);font-weight:700}
+
+/* ── Libro ── */
+.libro{
+  max-width:1180px;margin:26px auto 0;padding-inline:20px;
+  display:grid;grid-template-columns:auto 1fr;gap:0;align-items:start;
+}
+/* troquel */
+.troquel{
+  display:flex;flex-direction:column;gap:3px;
+  padding:14px 0;background:var(--azul);
+  border-radius:14px 0 0 14px;
+}
+.troquel button{
+  font-family:var(--f-ui);font-weight:700;font-size:14px;
+  width:46px;padding:7px 0;border:0;background:transparent;color:#C6D4EE;
+  border-radius:8px 0 0 8px;line-height:1;transition:background .12s,color .12s;
+}
+.troquel button:hover:not(:disabled){background:rgba(255,255,255,.14);color:#fff}
+.troquel button[aria-pressed="true"]{background:var(--papel);color:var(--azul);font-weight:800}
+.troquel button:disabled{color:rgba(255,255,255,.26);cursor:default}
+
+/* pliego */
+.pliego{
+  background:var(--papel);border:1px solid var(--papel-borde);border-left:0;
+  border-radius:0 14px 14px 0;box-shadow:0 2px 20px var(--sombra);
+  padding:30px clamp(20px,3.6vw,46px) 26px;min-width:0;min-height:560px;
+  position:relative;
+}
+.pliego::before{ /* canto del pliego */
+  content:"";position:absolute;left:0;top:0;bottom:0;width:14px;
+  background:linear-gradient(90deg,rgba(22,48,107,.09),transparent);
+  pointer-events:none;
+}
+.encabeza{display:flex;align-items:flex-start;gap:20px;border-bottom:2px solid var(--papel-borde);padding-bottom:16px;margin-bottom:4px}
+.capital{
+  font-family:var(--f-libro);font-weight:700;
+  font-size:clamp(62px,11vw,92px);line-height:.82;color:var(--azul);
+  letter-spacing:-.03em;
+}
+.encabeza div{padding-top:5px;min-width:0}
+.rotulo{font-family:var(--f-ui);font-size:11.5px;letter-spacing:.17em;text-transform:uppercase;color:var(--tinta-suave);font-weight:700}
+.encabeza h2{font-size:19px;font-weight:600;margin-top:3px;line-height:1.3}
+
+/* entradas */
+.entrada{padding:22px 0;border-bottom:1px solid var(--papel-borde)}
+.entrada:last-child{border-bottom:0}
+.titulo-fila{display:flex;flex-wrap:wrap;align-items:baseline;gap:9px 12px}
+.entrada h3{font-size:21px;font-weight:700;color:var(--azul);letter-spacing:-.01em}
+.sigla{font-family:var(--f-ui);font-size:13px;color:var(--tinta-suave);font-weight:600}
+.chip{
+  font-family:var(--f-ui);font-size:11px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;
+  background:var(--amarillo-tenue);color:#6B4E00;border:1px solid var(--amarillo);
+  padding:3px 10px;border-radius:999px;white-space:nowrap;
+}
+:root[data-theme="dark"] .chip{color:var(--amarillo)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .chip{color:var(--amarillo)}}
+.entrada p{margin:9px 0 0;font-size:16px;line-height:1.62;max-width:66ch}
+.pie-entrada{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:12px;font-family:var(--f-ui);font-size:13px;color:var(--tinta-suave)}
+.pie-entrada span{display:inline-flex;align-items:center;gap:6px}
+.vertambien{margin-top:11px;font-family:var(--f-ui);font-size:13.5px;color:var(--tinta-suave)}
+.vertambien b{font-weight:700;color:var(--tinta-suave)}
+.vertambien button{
+  font-family:var(--f-ui);font-size:13.5px;font-weight:600;
+  background:none;border:0;padding:0 1px;color:var(--azul-vivo);
+  text-decoration:underline;text-underline-offset:2px;
+}
+.vertambien button:hover{color:var(--azul)}
+
+mark{background:var(--amarillo);color:#2A2000;border-radius:3px;padding:0 2px}
+:root[data-theme="dark"] mark{background:var(--amarillo);color:#241C00}
+
+.vacio{padding:40px 0;color:var(--tinta-suave);font-size:16px;max-width:50ch}
+
+/* folio */
+.folio{
+  display:flex;justify-content:space-between;align-items:center;gap:14px;
+  margin-top:26px;padding-top:14px;border-top:2px solid var(--papel-borde);
+  font-family:var(--f-ui);font-size:12.5px;color:var(--tinta-suave);
+}
+.folio b{color:var(--azul);font-weight:700}
+
+.nota{
+  max-width:1180px;margin:20px auto 0;padding-inline:20px;
+  font-family:var(--f-ui);font-size:12.5px;line-height:1.6;color:var(--tinta-suave);
+}
+
+@media (max-width:760px){
+  .libro{grid-template-columns:1fr;padding-inline:16px;margin-top:18px}
+  .troquel{
+    flex-direction:row;flex-wrap:wrap;gap:4px;justify-content:center;
+    border-radius:14px 14px 0 0;padding:12px 10px;
+  }
+  .troquel button{width:34px;padding:7px 0;border-radius:7px;font-size:13.5px}
+  .pliego{border-left:1px solid var(--papel-borde);border-top:0;border-radius:0 0 14px 14px;padding:24px 18px;min-height:0}
+  .pliego::before{display:none}
+  .encabeza{gap:14px}
+  .tapa,.barra{padding-inline:16px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;0,7..72,700;1,7..72,400&family=Figtree:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="tapa">
+  <div class="tapa-in">
+    <div>
+      <div class="marca">Educación Complementaria · Corpoeducación – Colsubsidio</div>
+      <h1>Glosario de la Estrategia</h1>
+      <p>Los términos de la Estrategia de Atención por Ciclos y de la Caja de Herramientas, explicados en lenguaje claro. Elige una letra o busca una palabra.</p>
+    </div>
+    <button class="tema" id="tema" type="button">Cambiar tema</button>
+  </div>
+</header>
+
+<div class="barra">
+  <div class="barra-in">
+    <label class="busca">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true" style="color:var(--tinta-suave)"><circle cx="10.5" cy="10.5" r="6.8"></circle><path d="M15.5 15.5 20.5 20.5"></path></svg>
+      <input id="q" type="search" placeholder="Buscar un término o una palabra de su definición" autocomplete="off" aria-label="Buscar en el glosario">
+    </label>
+    <div class="conteo" id="conteo" aria-live="polite"></div>
+  </div>
+</div>
+
+<main class="libro">
+  <nav class="troquel" id="troquel" aria-label="Índice alfabético"></nav>
+  <section class="pliego">
+    <div class="encabeza">
+      <div class="capital" id="capital" aria-hidden="true">A</div>
+      <div>
+        <div class="rotulo" id="rotulo">Letra A</div>
+        <h2 id="subtitulo">Términos que empiezan por A</h2>
+      </div>
+    </div>
+    <div id="lista" aria-live="polite"></div>
+    <div class="folio">
+      <span id="folio-izq"></span>
+      <span id="folio-der"></span>
+    </div>
+  </section>
+</main>
+
+<p class="nota">Las definiciones se derivan del documento de la Estrategia de Atención Diferencial por Ciclos (Corpoeducación – Colsubsidio, 2026), del Proyecto Educativo de la Educación Complementaria y de los documentos orientadores de CILAB y NEOTECH. Las fuentes externas se citan en cada entrada.</p>
+
+<script>
+const G = [
+ {t:"Abstracto ampliado",c:"Evaluación",d:"Nivel más alto de la taxonomía SOLO. El estudiante no solo integra los aspectos de una tarea, sino que generaliza lo aprendido y lo transfiere a una situación nueva y distinta de aquella en la que aprendió. Es el horizonte del Ciclo 5.",f:"Biggs y Collis (1982)",v:["SOLO","Relacional","Uniestructural"]},
+ {t:"Acción y expresión",c:"DUA",d:"Principio del DUA que responde a cómo demuestra el estudiante lo que aprendió. Ofrece varias formas equivalentes de evidenciar el aprendizaje, como un artefacto funcionando, un esquema técnico anotado, un video con narración o una bitácora dibujada. El desempeño esperado no cambia; el formato sí.",f:"CAST (2024)",v:["DUA","Representación","Implicación","Evidencia de aprendizaje"]},
+ {t:"Agencia del aprendiz",c:"DUA",d:"Horizonte formativo del DUA en su versión 3.0. Capacidad de aprender con propósito y reflexión, actuar estratégicamente, tomar decisiones fundamentadas y participar de manera auténtica. No es un punto de llegada aislado: resulta del andamiaje que se ajusta progresivamente.",f:"CAST (2024)",v:["DUA","Andamiaje","Metacognición"]},
+ {t:"Andamiaje",c:"Pedagogía",d:"Apoyo temporal que el facilitador ofrece para que el estudiante logre lo que todavía no puede hacer solo, y que se retira de forma gradual a medida que avanza de ciclo. En Ciclo 1 se modela y acompaña de cerca; en Ciclo 5 el facilitador es mentor y el estudiante co-diseña.",f:"Wood, Bruner y Ross (1976); Vygotsky (1978)",v:["Zona de Desarrollo Próximo","Gradación del andamiaje","Autonomía reflexiva"]},
+ {t:"Aprendizaje activo",c:"Fundamentos",d:"Fundamento epistemológico de la Estrategia. Sostiene que el conocimiento se construye cuando el sujeto actúa sobre problemas reales, y no cuando recibe información de forma pasiva. Atraviesa las tres dimensiones de la propuesta: cómo se conoce, cómo se enseña y cómo se organiza la experiencia.",f:"Piaget (1969); Vygotsky (1978); Ausubel et al. (1983)",v:["Aprendizaje situado","ABP","Territorio ampliado"]},
+ {t:"Aprendizaje Basado en Proyectos",s:"ABP",c:"Metodología",d:"Eje metodológico de la Estrategia. Organiza las experiencias alrededor de un desafío auténtico del entorno del estudiante, que investiga, decide, trabaja con otros y reflexiona sobre su propio aprendizaje. No se reduce a elaborar un producto final: es un proceso pedagógico estructurado.",f:"Kilpatrick (1918); Larmer et al. (2015)",v:["Ciclo de indagación","Núcleo problémico","Contexto auténtico","Proyecto de calidad"]},
+ {t:"Aprendizaje estructurante",c:"Currículo",d:"Aprendizaje central que no se agota en una sola actividad y se vuelve una herramienta que el estudiante usa una y otra vez en situaciones distintas. En Ciencia y Tecnología apunta a explorar, indagar, diseñar y construir soluciones pertinentes para el contexto.",f:"Estrategia de Atención por Ciclos (2026)",v:["Competencia macro","Progresión","Proyecto integrador"]},
+ {t:"Aprendizaje situado",c:"Fundamentos",d:"Tesis de que el conocimiento se construye de manera más significativa cuando se vincula con situaciones auténticas, problemas reales y propósitos relevantes para quien aprende. Es la razón de que la propuesta parta del territorio y no de unidades temáticas.",f:"Lave y Wenger (1991)",v:["Territorio ampliado","Contexto auténtico","Aprendizaje activo"]},
+ {t:"Apropiación digital",c:"Currículo",d:"Una de las cinco competencias sello del Modelo Educativo Colsubsidio. Uso crítico y creativo de herramientas y entornos digitales para aprender y participar. Es transversal a las seis líneas y no exclusiva de Ciencia y Tecnología.",f:"MEC (2026)",v:["Competencias sello","Pensamiento computacional"]},
+ {t:"Artes Plásticas y Visuales",c:"Líneas",d:"Línea de Formación Artística centrada en materiales, técnicas y composición visual con intención estética, priorizando el proceso creativo sobre el resultado final. Va de la exploración visual a la creación.",f:"Mallas por líneas temáticas (2026)",v:["Formación Artística","Danza","Música","Teatro"]},
+ {t:"Autoconciencia",c:"Socioemocional",d:"Competencia socioemocional priorizada en el Ciclo 1. Conciencia de sí mismo y de las propias emociones: identificar emociones básicas, nombrar fortalezas propias y reconocer las sensaciones corporales ligadas a la emoción.",f:"CASEL (2020)",v:["CASEL","Autorregulación","Habilidades socioemocionales"]},
+ {t:"Autonomía reflexiva",c:"Pedagogía",d:"Punto de llegada de la gradación del andamiaje. En el Ciclo 5 el facilitador formula preguntas y el estudiante co-diseña, con co-liderazgo y gestión autónoma del proceso. El recorrido parte de la alta mediación del Ciclo 1.",f:"Estrategia de Atención por Ciclos (2026)",v:["Andamiaje","Gradación del andamiaje","Agencia del aprendiz"]},
+ {t:"Autorregulación",c:"Socioemocional",d:"Competencia socioemocional priorizada en el Ciclo 2. Gestión de emociones, impulsos y comportamientos para lograr metas: control de impulsos, manejo del estrés, persistencia, resiliencia y autodisciplina.",f:"CASEL (2020)",v:["CASEL","Autoconciencia","Conciencia social"]},
+
+ {t:"Bitácora técnica",c:"Caja de Herramientas",d:"Registro escrito o gráfico donde el estudiante documenta decisiones, errores y ajustes durante el diseño de su prototipo. Hace visible el razonamiento y no solo el resultado, por lo que pesa tanto como el artefacto en la valoración.",f:"Estrategia de Atención por Ciclos (2026)",v:["Evidencia de aprendizaje","Prototipado iterativo","Portafolio"]},
+ {t:"Bloom",s:"taxonomía",c:"Evaluación",d:"Clasificación del proceso cognitivo que el facilitador solicita: recordar, comprender, aplicar, analizar, evaluar y crear. Opera antes de la experiencia, al formular el propósito formativo, y vive en el verbo que lo encabeza.",f:"Anderson y Krathwohl (2001)",v:["SOLO","Marzano","Propósito formativo"]},
+
+ {t:"Caja de Herramientas",c:"Caja de Herramientas",d:"Instrumento operativo que traduce la Estrategia de Atención por Ciclos en decisiones de aula. Reúne orientaciones breves y plantillas organizadas en cuatro estaciones. No es un plan de estudios ni un manual exhaustivo.",f:"Caja de Herramientas (2026)",v:["Estaciones","Ficha de planeación por sesión","Gesto observable"]},
+ {t:"CASEL",c:"Socioemocional",d:"Marco de aprendizaje socioemocional con cinco competencias: autoconciencia, autogestión, conciencia social, habilidades para relacionarse y toma de decisiones responsable. La Estrategia prioriza una distinta en cada ciclo.",f:"CASEL (2020)",v:["Habilidades socioemocionales","Autoconciencia","Autorregulación","Conciencia social"]},
+ {t:"Ciclo de indagación",c:"Metodología",d:"Herramienta que estructura el proyecto en seis momentos interrelacionados que orientan la ruta de cualquier proyecto, sin importar el ciclo, la línea o la edad: la ocasión, el pretexto, la estrategia, la creación, la puesta en escena y el desenlace.",f:"Proyecto Educativo de la Educación Complementaria (2026)",v:["Ocasión","Pretexto","Creación","Desenlace","ABP"]},
+ {t:"Ciclo educativo",c:"Currículo",d:"Agrupación de grados según la etapa de desarrollo. Ciclo 1 (1.º y 2.º, 6 a 8 años), Ciclo 2 (3.º a 5.º, 8 a 11), Ciclo 3 (6.º y 7.º, 11 a 13), Ciclo 4 (8.º y 9.º, 13 a 15) y Ciclo 5 (10.º y 11.º, 15 a 17).",f:"MEC (2026)",v:["Estrategia de Atención por Ciclos","Progresión","Neurodesarrollo"]},
+ {t:"CILAB",s:"Crea Innova Lab",c:"Líneas",d:"Línea de Ciencia y Tecnología que desarrolla el pensamiento científico y tecnológico mediante la construcción o apropiación de prototipos funcionales, con ABP, enfoque STEM y cultura maker. La robótica es territorio propio de CILAB desde el Ciclo 3.",f:"CILAB, documento orientador",v:["NEOTECH","Ciencia y Tecnología","Cultura maker","Prototipo"]},
+ {t:"Ciencia y Tecnología",c:"Modalidades",d:"Modalidad de Educación Complementaria orientada a pensar, crear y resolver desafíos del mundo real con tecnología. Se desarrolla a través de dos líneas con trayectos distintos aunque paralelos: CILAB y NEOTECH.",f:"Estrategia de Atención por Ciclos (2026)",v:["CILAB","NEOTECH","Formación Artística","Modalidad"]},
+ {t:"Coevaluación",c:"Evaluación",d:"Valoración entre pares, construida de manera participativa con los estudiantes desde las etapas iniciales del proyecto. Junto con la autoevaluación, favorece la implicación en la valoración de los aprendizajes.",f:"UNICEF Argentina (2020)",v:["Evaluación formativa","Rúbrica","Retroalimentación"]},
+ {t:"Competencia",c:"Currículo",d:"Capacidad de movilizar un conjunto de recursos cognitivos, es decir saberes, habilidades y esquemas de acción, para resolver con eficacia una familia de situaciones complejas. No se aprende por exposición a su definición: se construye enfrentando problemas que la exigen.",f:"Perrenoud (2012)",v:["Competencia macro","Competencias sello","Desempeño observable"]},
+ {t:"Competencia macro",c:"Currículo",d:"Traducción de las competencias sello en un propósito propio de cada ciclo: Descubriendo mi mundo (explorar), Componiendo mi mundo (organizar), Memorias, identidades y territorios (interpretar), Resignificando el mundo (imaginar) y Creando futuros posibles (hacer consciente).",f:"Corpoeducación (2026)",v:["Competencias sello","Progresión","Aprendizaje estructurante"]},
+ {t:"Competencias del siglo XXI",c:"Currículo",d:"Pensamiento creativo, colaboración, comunicación, ciudadanía digital y resolución de problemas complejos. Se desarrollan de forma progresiva y emergen como resultado del proceso ABP, que las activa de manera simultánea e integrada.",f:"OCDE (2019); Sen (1999)",v:["Competencias sello","Habilidades socioemocionales","ABP"]},
+ {t:"Competencias sello",c:"Currículo",d:"Las cinco capacidades transversales del Modelo Educativo Colsubsidio: competencias investigativas, pensamiento crítico, habilidades socioemocionales, apropiación digital y cultura bilingüe. No son contenidos que se enseñan, sino capacidades que se desarrollan en la acción.",f:"MEC (2026); Perrenoud (2012)",v:["Competencia","Competencia macro","Horizonte formativo"]},
+ {t:"Conciencia social",c:"Socioemocional",d:"Competencia socioemocional priorizada en el Ciclo 3. Comprender las perspectivas de otros en contextos diversos: toma de perspectiva, preocupación por los sentimientos ajenos, comunicación empática y respuesta prosocial.",f:"CASEL (2020)",v:["CASEL","Autorregulación","Toma de decisiones responsable"]},
+ {t:"Contexto auténtico",c:"Metodología",d:"Condición que permite que el problema o la pregunta orientadora adquieran sentido para los estudiantes. No es un escenario accesorio ni decorativo: comprende las relaciones, saberes, prácticas, intereses y experiencias que configuran su realidad.",f:"Estrategia de Atención por Ciclos (2026)",v:["Territorio ampliado","Núcleo problémico","Pregunta orientadora"]},
+ {t:"Creación",c:"Ciclo de indagación",d:"Cuarto momento del ciclo de indagación. El estudiante diseña, construye, investiga y produce, y registra el proceso en bitácoras o portafolios. El facilitador acompaña sin dirigir y retroalimenta los productos intermedios.",f:"Proyecto Educativo de la Educación Complementaria (2026)",v:["Ciclo de indagación","Estrategia","Puesta en escena","Producto intermedio"]},
+ {t:"Cultura bilingüe",c:"Currículo",d:"Una de las cinco competencias sello. Desarrollo de capacidades comunicativas en más de una lengua como condición de participación ampliada.",f:"MEC (2026)",v:["Competencias sello"]},
+ {t:"Cultura maker",c:"Metodología",d:"Enfoque que privilegia el aprender haciendo, construyendo objetos con sentido y compartiendo el proceso con otros. En CILAB se articula con el ABP y el enfoque STEM en la construcción de prototipos funcionales.",f:"Papert (1980); Martinez y Stager",v:["CILAB","Enfoque STEM","Prototipo"]},
+
+ {t:"Danza",c:"Líneas",d:"Línea de Formación Artística centrada en el cuerpo, el movimiento y la composición para comunicar emociones y narrativas, desde la exploración corporal hasta la creación coreográfica colectiva.",f:"Mallas por líneas temáticas (2026)",v:["Formación Artística","Música","Teatro","Artes Plásticas y Visuales"]},
+ {t:"Desempeño observable",c:"Evaluación",d:"Lo que el estudiante hace, no lo que sabe. Es el eslabón intermedio de la cadena que va de la competencia, aquello que debe llegar a poder hacer, a la evidencia, el registro que lo demuestra.",f:"Corpoeducación (2026)",v:["Competencia","Evidencia de aprendizaje","Gesto observable"]},
+ {t:"Desenlace",c:"Ciclo de indagación",d:"Sexto y último momento del ciclo de indagación. El estudiante constata cómo su producción responde a la necesidad que la originó, evalúa de manera metacognitiva su proceso y el del equipo, y proyecta el siguiente reto. El cierre de un ciclo alimenta la apertura del siguiente.",f:"Proyecto Educativo de la Educación Complementaria (2026)",v:["Ciclo de indagación","Puesta en escena","Metacognición","Reflexión"]},
+ {t:"Diseño inverso",c:"Currículo",d:"Lógica de planeación que define primero la evidencia de aprendizaje y solo después la actividad que conducirá a ella. Implica que quien planea asume al mismo tiempo la posición de quien evalúa.",f:"Wiggins y McTighe; Biggs y Tang (2011)",v:["Evidencia de aprendizaje","Propósito formativo","Rúbrica"]},
+ {t:"Diseño Universal para el Aprendizaje",s:"DUA",c:"DUA",d:"Marco pedagógico cuya premisa es que las barreras para el aprendizaje no residen en las capacidades de los estudiantes, sino en el diseño inflexible del currículo, los materiales y las tareas. En la Estrategia opera como principio de diseño desde el origen y no como adaptación posterior.",f:"Rose y Meyer (2002); CAST (2024)",v:["Implicación","Representación","Acción y expresión","Redes cerebrales"]},
+
+ {t:"Educación Complementaria",c:"Marco institucional",d:"Programa que contribuye a la formación integral de estudiantes de básica y media mediante experiencias innovadoras de aprendizaje, desde el aprovechamiento del tiempo libre. No es una extensión ni un refuerzo remedial de la jornada obligatoria.",f:"Proyecto Educativo de la Educación Complementaria (2026)",v:["Estrategia de Atención por Ciclos","Tiempo libre","Modalidad"]},
+ {t:"Enfoque de género",c:"Equidad",d:"Perspectiva para reconocer y cuestionar estereotipos y desigualdades que inciden en las oportunidades de participación. Se concreta en decisiones curriculares y metodológicas, no en contenidos declarativos sobre la igualdad.",f:"Estrategia de Atención por Ciclos (2026); MEN (2022)",v:["Equidad","DUA","Diversidad"]},
+ {t:"Enfoque STEM",c:"Metodología",d:"Integración de ciencia, tecnología, ingeniería y matemáticas alrededor de problemas reales, en la que el diseño funcional dialoga con variables éticas, ambientales y estéticas para que los prototipos respondan con pertinencia social al contexto.",f:"Jackman (2008); Bybee (2013)",v:["CILAB","Cultura maker","Prototipo"]},
+ {t:"Equidad",c:"Equidad",d:"Condición transversal de calidad que reconoce la diversidad de los estudiantes y orienta la identificación y eliminación de barreras socioculturales que puedan limitar su participación, aprendizaje y desarrollo.",f:"MEC (2026)",v:["Enfoque de género","Diversidad","DUA"]},
+ {t:"Estaciones",c:"Caja de Herramientas",d:"Las cuatro paradas en que se organiza la Caja de Herramientas: Inicia la travesía, Explora el mapa del territorio, Recorre el territorio e Implementa la experiencia. Cada estación se define por su trayecto, su sección, sus contenidos y su formato.",f:"Caja de Herramientas (2026)",v:["Caja de Herramientas","Ficha de planeación por sesión"]},
+ {t:"Estrategia",c:"Ciclo de indagación",d:"Tercer momento del ciclo de indagación. El grupo planifica, distribuye responsabilidades y conoce desde el inicio los criterios de logro. Se co-construyen con el grupo la rúbrica y el plan de trabajo.",f:"Proyecto Educativo de la Educación Complementaria (2026)",v:["Ciclo de indagación","Pretexto","Creación","Rúbrica"]},
+ {t:"Estrategia de Atención por Ciclos",c:"Marco institucional",d:"Forma de organizar propósitos, actividades, acompañamiento y evaluación según el momento de desarrollo de cada grupo, del Ciclo 1 al Ciclo 5, y según su contexto urbano o rural. Responde a que las condiciones del aprendizaje no son iguales en todas las etapas.",f:"Estrategia de Atención por Ciclos (2026)",v:["Ciclo educativo","Educación Complementaria","Progresión"]},
+ {t:"Estrategia pedagógica",c:"Metodología",d:"Forma intencionada de organizar la mediación, la participación y las acciones de aprendizaje. No se selecciona por sí misma, sino por su capacidad de generar las condiciones que requiere cada experiencia. Incluye la bitácora técnica, el prototipado iterativo, los retos técnicos guiados y el laboratorio de creación.",f:"Estrategia de Atención por Ciclos (2026)",v:["Experiencia de aprendizaje","Bitácora técnica","Prototipado iterativo"]},
+ {t:"Evaluación auténtica",c:"Evaluación",d:"Valoración del desempeño en situaciones que reproducen, con la mayor fidelidad posible, los retos del contexto real. Distingue el objeto de la evaluación, que es la comprensión y el razonamiento, de los medios con que se hace visible.",f:"Wiggins (1990); CAST (2024)",v:["Evaluación formativa","Rúbrica","Evidencia de aprendizaje"]},
+ {t:"Evaluación formativa",c:"Evaluación",d:"Evaluación para el aprendizaje y no del aprendizaje. Recoge evidencias durante todo el proceso para retroalimentar y ajustar, en lugar de verificar un resultado al cierre.",f:"Black y Wiliam (1998)",v:["Retroalimentación","Coevaluación","Evidencia de aprendizaje"]},
+ {t:"Evidencia de aprendizaje",c:"Evaluación",d:"Registro que demuestra el desempeño. Progresa con el ciclo: en los iniciales el pensamiento se hace visible en la acción directa, el juego y el cuerpo; en los medios, en la argumentación oral y las bitácoras; en los superiores, en la investigación aplicada y la exposición pública.",f:"Ritchhart, Church y Morrison (2011)",v:["Desempeño observable","Bitácora técnica","Producto intermedio"]},
+ {t:"Experiencia de aprendizaje",c:"Metodología",d:"Trayectoria intencionada que articula propósito, contexto, acción y evidencia en una unidad pedagógica coherente. No es una actividad suelta: tiene valor educativo cuando genera continuidad con lo vivido antes e interacción con el entorno.",f:"Dewey (2010); Meirieu (2016)",v:["Estrategia pedagógica","Ciclo de indagación","Sesión pedagógica"]},
+
+ {t:"Facilitador",c:"Roles",d:"Mediador pedagógico y diseñador de experiencias. Acompaña las trayectorias, organiza el ambiente de aprendizaje, construye acuerdos y orienta la construcción colectiva del conocimiento desde una posición de acompañamiento.",f:"Estrategia de Atención por Ciclos (2026)",v:["Andamiaje","Gradación del andamiaje","Retroalimentación"]},
+ {t:"Formación Artística",c:"Modalidades",d:"Modalidad de Educación Complementaria orientada a crear, expresar y narrar el mundo desde múltiples lenguajes artísticos. Se desarrolla a través de cuatro líneas: Danza, Música, Teatro y Artes Plásticas y Visuales.",f:"Estrategia de Atención por Ciclos (2026)",v:["Ciencia y Tecnología","Danza","Música","Teatro","Artes Plásticas y Visuales"]},
+
+ {t:"Gesto observable",c:"Caja de Herramientas",d:"Acción o expresión que el estudiante hace o dice durante la experiencia y que el facilitador puede ver o escuchar: explica una decisión, prueba y corrige, propone una alternativa, ayuda a un compañero. Registrarlo durante el proceso, y no solo al final, convierte la evaluación en información útil.",f:"Caja de Herramientas (2026)",v:["Desempeño observable","Evidencia de aprendizaje","Evaluación formativa"]},
+ {t:"Gradación del andamiaje",c:"Pedagogía",d:"Progresión que va de la alta mediación a la autonomía reflexiva. En Ciclo 1 el facilitador estructura y modela; en Ciclo 2 organiza la cooperación; en Ciclo 3 orienta y problematiza; en Ciclo 4 propone desafíos y abre decisiones; en Ciclo 5 formula preguntas y el estudiante co-diseña.",f:"Corpoeducación (2026)",v:["Andamiaje","Autonomía reflexiva","Facilitador"]},
+
+ {t:"Habilidades socioemocionales",c:"Socioemocional",d:"Una de las cinco competencias sello. Se despliegan desde el marco CASEL en cinco dimensiones y se distribuyen por ciclo: autoconciencia en Ciclo 1, autorregulación en Ciclo 2, conciencia social en Ciclo 3, toma de decisiones responsable en Ciclo 4 y habilidades relacionales con liderazgo ético en Ciclo 5.",f:"CASEL (2020); MEC (2026)",v:["CASEL","Competencias sello","Autoconciencia"]},
+ {t:"Horizonte formativo",c:"Marco institucional",d:"Sistema de sentido que da coherencia a toda la propuesta curricular. Sus cuatro componentes se derivan uno del otro: la visión define el sujeto que se quiere formar, esa definición determina a quiénes se atiende y qué capacidades son prioritarias, y esas capacidades orientan los principios.",f:"Estrategia de Atención por Ciclos (2026)",v:["Visión de formación","Competencias sello","Principios orientadores","Perfil de egreso"]},
+
+ {t:"Implicación",c:"DUA",d:"Principio del DUA que responde a por qué aprende el estudiante. Conecta el proyecto con sus intereses y su territorio, y sostiene la autorregulación al hacer que conozca desde el inicio el desafío, los criterios de la rúbrica y las evidencias esperadas.",f:"CAST (2024)",v:["DUA","Representación","Acción y expresión","Territorio ampliado"]},
+ {t:"Indagación",c:"Metodología",d:"Proceso que admite distintas modalidades según el desafío y la línea: documental, mediante consulta y contraste de fuentes; empírica, mediante observación, experimentación y recolección de datos; y de campo, mediante encuestas, entrevistas o consulta a actores del territorio.",f:"Estrategia de Atención por Ciclos (2026)",v:["Ciclo de indagación","Investigación","Territorios de indagación"]},
+ {t:"IoT",s:"Internet de las cosas",c:"Líneas",d:"Conjunto de objetos físicos conectados que intercambian datos. En NEOTECH aparece desde el Ciclo 4, junto con la domótica y la robótica aplicada, en la construcción de prototipos a partir de las ideas propias del estudiante.",f:"NEOTECH, documento orientador",v:["NEOTECH","Prototipo","Tecnologías emergentes"]},
+
+ {t:"Laboratorio de creación",c:"Metodología",d:"Espacio físico y de tiempo dedicado a experimentar con materiales, herramientas y lenguajes de programación bajo el acompañamiento del facilitador.",f:"Estrategia de Atención por Ciclos (2026)",v:["Estrategia pedagógica","Cultura maker","Prototipado iterativo"]},
+ {t:"Línea temática",c:"Modalidades",d:"Área específica de trabajo dentro de una modalidad. Ciencia y Tecnología reúne a CILAB y NEOTECH; Formación Artística, a Danza, Música, Teatro y Artes Plásticas y Visuales. Lo que cambia entre ellas es el lenguaje disciplinar, no la estructura pedagógica.",f:"Estrategia de Atención por Ciclos (2026)",v:["Modalidad","CILAB","NEOTECH"]},
+
+ {t:"Malla curricular",c:"Currículo",d:"Matriz de progresión que cruza ciclo, modalidad y línea, y hace explícitas las competencias, los desempeños y las evidencias. Es el instrumento central para planear cada ciclo.",f:"Mallas por líneas temáticas (2026)",v:["Progresión","Competencia macro","Evidencia de aprendizaje"]},
+ {t:"Marzano",s:"Nueva Taxonomía",c:"Evaluación",d:"Referente que permite identificar, dentro de cada nivel de complejidad, qué sistema se movilizó: el cognitivo, asociado al procesamiento de la información; el metacognitivo, a la planeación y el monitoreo del propio proceso; o el del yo, a la disposición frente al reto. La Estrategia retoma su dimensión de sistemas, no su gradación de niveles.",f:"Marzano y Kendall (2007)",v:["SOLO","Bloom","Metacognición"]},
+ {t:"Metacognición",c:"Evaluación",d:"Conciencia del propio proceso de aprendizaje. Permite al estudiante comprender sus avances y dificultades y proyectar los siguientes pasos. Se desarrolla en tres momentos: activación y conexión, reflexión en acción, y sistematización y proyección.",f:"Anijovich y Cappelletti (2017)",v:["Reflexión","Desenlace","Rutinas de pensamiento"]},
+ {t:"Modalidad",c:"Modalidades",d:"Gran campo de la Educación Complementaria. Son dos: Ciencia y Tecnología, y Formación Artística. Ambas comparten el ABP, el ciclo de indagación y el desarrollo de competencias socioemocionales y del siglo XXI.",f:"Estrategia de Atención por Ciclos (2026)",v:["Ciencia y Tecnología","Formación Artística","Línea temática"]},
+ {t:"Modelo Educativo Colsubsidio",s:"MEC",c:"Marco institucional",d:"Marco institucional que establece el perfil de egreso como núcleo central y adopta los cuatro pilares de la educación de la comisión Delors, expandidos con una quinta dimensión: aprender a transformarse, orientada a la acción climática y social.",f:"MEC (2026); Delors (1996)",v:["Horizonte formativo","Perfil de egreso","Competencias sello"]},
+ {t:"Multiestructural",c:"Evaluación",d:"Segundo nivel de la taxonomía SOLO. El estudiante maneja varios aspectos relevantes de la tarea, pero aún no los relaciona entre sí. Es realista en los Ciclos 2 y 3.",f:"Biggs y Collis (1982)",v:["SOLO","Uniestructural","Relacional"]},
+ {t:"Música",c:"Líneas",d:"Línea de Formación Artística centrada en la exploración sonora, la identidad musical y la creación a partir de los territorios musicales, con el cuerpo y la voz como primeros instrumentos.",f:"Mallas por líneas temáticas (2026)",v:["Formación Artística","Danza","Teatro","Artes Plásticas y Visuales"]},
+
+ {t:"NEOTECH",c:"Líneas",d:"Línea de Ciencia y Tecnología centrada en el pensamiento computacional y las tecnologías emergentes, organizadas en tres territorios de indagación: electrónica, programación y prototipado. La robótica aparece más adelante, como una tecnología emergente entre otras.",f:"NEOTECH, documento orientador",v:["CILAB","Ciencia y Tecnología","Territorios de indagación","Pensamiento computacional"]},
+ {t:"Neurodesarrollo",c:"Fundamentos",d:"Condición de fondo de la Estrategia. Los detonadores emocionales, los umbrales de atención y las fuentes de curiosidad varían cualitativamente en cada etapa, de modo que la gradualización de los aprendizajes está anclada en la biología del aprendizaje.",f:"Mora (2013); Blakemore",v:["Ciclo educativo","Progresión","Estrategia de Atención por Ciclos"]},
+ {t:"Núcleo problémico",c:"Metodología",d:"Situación real, delimitada y significativa desde la cual se integran las competencias, los saberes disciplinares y los criterios de evaluación. Impide que el proyecto resulte de la suma de actividades sueltas y garantiza la trazabilidad curricular.",f:"Tobón (2013)",v:["ABP","Pregunta orientadora","Trazabilidad curricular"]},
+
+ {t:"Ocasión",c:"Ciclo de indagación",d:"Primer momento del ciclo de indagación. El facilitador presenta una situación provocadora vinculada al territorio y la cultura del estudiante, y activa los saberes previos mediante preguntas abiertas. Cumple además una función diagnóstica.",f:"Proyecto Educativo de la Educación Complementaria (2026)",v:["Ciclo de indagación","Pretexto","Territorio ampliado"]},
+
+ {t:"Pensamiento computacional",c:"Currículo",d:"Capacidad de descomponer problemas, reconocer patrones, abstraer y diseñar algoritmos para resolverlos. Es la competencia central de NEOTECH y se desarrolla desde la programación desconectada hasta lenguajes más robustos.",f:"Wing (2006)",v:["NEOTECH","Apropiación digital","Territorios de indagación"]},
+ {t:"Pensamiento crítico",c:"Currículo",d:"Una de las cinco competencias sello. Capacidad de analizar, cuestionar, argumentar y tomar posición frente a situaciones complejas. Su progresión va de identificar problemáticas locales a integrar valores universales en las decisiones.",f:"MEC (2026)",v:["Competencias sello","Competencias del siglo XXI"]},
+ {t:"Perfil de egreso",c:"Marco institucional",d:"Núcleo del Modelo Educativo Colsubsidio: personas locales y globales, con carácter y criterio para la vida, comprometidas con la transformación social.",f:"MEC (2026)",v:["Modelo Educativo Colsubsidio","Horizonte formativo","Visión de formación"]},
+ {t:"Portafolio",c:"Evaluación",d:"Instrumento de seguimiento que reúne productos intermedios y finales junto con el registro del proceso. Hace visible no solo lo entregado, sino las decisiones, los desacuerdos y los ajustes ocurridos en el camino.",f:"UNICEF Argentina (2020)",v:["Bitácora técnica","Evidencia de aprendizaje","Rúbrica"]},
+ {t:"Pregunta orientadora",c:"Metodología",d:"Punto de partida e hilo conductor del proyecto. Es abierta, desafiante y susceptible de múltiples aproximaciones. En los primeros ciclos la propone el facilitador; en los superiores, los propios estudiantes contribuyen a formularla.",f:"Mineduc et al. (2021)",v:["Núcleo problémico","Contexto auténtico","ABP"]},
+ {t:"Pretexto",c:"Ciclo de indagación",d:"Segundo momento del ciclo de indagación. El facilitador ofrece recursos e información en múltiples formatos y guía la exploración sin dar respuestas, ajustando el andamiaje según el ciclo. Aquí se construyen los fundamentos conceptuales y técnicos del proyecto.",f:"Proyecto Educativo de la Educación Complementaria (2026)",v:["Ciclo de indagación","Ocasión","Estrategia","Representación"]},
+ {t:"Principios orientadores",c:"Marco institucional",d:"Los seis principios del currículo: centrado en el estudiante, desarrollo integral, aprendizaje significativo, fomento de la ciudadanía activa, innovación y creatividad, y colaboración y trabajo en equipo. El ABP es la estructura que los hace coherentes con el propósito de desarrollar competencias.",f:"Proyecto Educativo de la Educación Complementaria (2026)",v:["Horizonte formativo","ABP","Competencias sello"]},
+ {t:"Producto intermedio",c:"Metodología",d:"Resultado parcial que los estudiantes elaboran en un momento del ciclo de indagación y que acerca el proyecto a su producto final. Permite retroalimentar durante el proceso y no solo al cierre.",f:"Estrategia de Atención por Ciclos (2026)",v:["Evidencia de aprendizaje","Creación","Retroalimentación"]},
+ {t:"Progresión",c:"Currículo",d:"Transformación cualitativa en las formas de conocer, hacer, ser, convivir y transformarse a lo largo de la trayectoria. No es acumular contenidos más difíciles: lo que progresa es el andamiaje, la forma de participar y la complejidad de la evidencia.",f:"Estrategia de Atención por Ciclos (2026)",v:["Gradación del andamiaje","SOLO","Malla curricular","Competencia macro"]},
+ {t:"Propósito formativo",c:"Caja de Herramientas",d:"Enunciado que responde a cuatro preguntas: qué hará el estudiante, sobre qué, cómo o con qué, y para qué. Su verbo se elige con la taxonomía de Bloom y se calibra al nivel de desarrollo real del grupo.",f:"Caja de Herramientas (2026)",v:["Bloom","SOLO","Competencia macro","Diseño inverso"]},
+ {t:"Prototipado iterativo",c:"Metodología",d:"Construir una primera versión sencilla, probarla, encontrar las fallas y mejorarla, en lugar de buscar una solución perfecta desde el inicio. El error se entiende como un dato que orienta la siguiente versión.",f:"Estrategia de Atención por Ciclos (2026)",v:["Prototipo","Bitácora técnica","Laboratorio de creación"]},
+ {t:"Prototipo",c:"Líneas",d:"Evidencia material del aprendizaje en Ciencia y Tecnología. Progresa de la maqueta exploratoria del Ciclo 1 a construcciones sencillas, luego a prototipos funcionales que integran mecánica, electrónica y programación, y finalmente a dispositivos autónomos con proyección territorial.",f:"Estrategia de Atención por Ciclos (2026)",v:["Prototipado iterativo","CILAB","NEOTECH","Evidencia de aprendizaje"]},
+ {t:"Proyecto de calidad",c:"Metodología",d:"Proyecto cuyo rigor se reconoce por la coherencia entre sus componentes, es decir el problema auténtico, la pregunta orientadora, la investigación, el producto, la socialización y la reflexión, y por la exigencia cognitiva sostenida. La exigencia se gradúa por ciclo; el estándar de coherencia se mantiene.",f:"Mineduc et al. (2021)",v:["ABP","Pregunta orientadora","Socialización","Reflexión"]},
+ {t:"Proyecto integrador",c:"Currículo",d:"Proyecto que organiza el aprendizaje estructurante de cada ciclo: Explorando el mundo que me rodea, Construyendo mis primeras soluciones, Indagando y prototipando con propósito, Innovando con sentido técnico y social, y Liderando soluciones con impacto territorial.",f:"Estrategia de Atención por Ciclos (2026)",v:["Aprendizaje estructurante","Competencia macro","ABP"]},
+ {t:"Puesta en escena",c:"Ciclo de indagación",d:"Quinto momento del ciclo de indagación. El estudiante presenta el producto ante una audiencia real y comunica el proceso, los hallazgos y las decisiones tomadas. Trasciende la presentación final: es un espacio formativo de argumentación y reconocimiento.",f:"Proyecto Educativo de la Educación Complementaria (2026)",v:["Ciclo de indagación","Creación","Desenlace","Socialización"]},
+
+ {t:"Redes cerebrales",c:"DUA",d:"Las tres redes que operan de forma interdependiente durante el aprendizaje y fundamentan el DUA: las de reconocimiento, que perciben y asignan significado; las estratégicas, que planifican y monitorean; y las afectivas, que regulan la motivación. Su variabilidad explica por qué no hay dos estudiantes que aprendan igual.",f:"Rose y Meyer (2002)",v:["DUA","Representación","Acción y expresión","Implicación"]},
+ {t:"Reflexión",c:"Metodología",d:"Proceso cognitivo presente a lo largo de toda la experiencia y no solo en su cierre. Se desarrolla en tres momentos articulados: activación y conexión, reflexión en acción, y sistematización y proyección.",f:"Anijovich y Cappelletti (2017)",v:["Metacognición","Desenlace","Rutinas de pensamiento"]},
+ {t:"Relacional",c:"Evaluación",d:"Tercer nivel de la taxonomía SOLO. El estudiante integra los distintos aspectos de la tarea en un todo coherente y explica cómo se conectan. Es realista en los Ciclos 3 y 4.",f:"Biggs y Collis (1982)",v:["SOLO","Multiestructural","Abstracto ampliado"]},
+ {t:"Representación",c:"DUA",d:"Principio del DUA que responde a qué aprende el estudiante y por qué vías accede. Ofrece el mismo concepto en formatos articulados: un fenómeno físico observable, una representación visual o mediada y una experiencia manipulativa. No sustituye un canal por otro: los ofrece de forma simultánea y equivalente.",f:"CAST (2024); Rose y Meyer (2002)",v:["DUA","Implicación","Acción y expresión","Pretexto"]},
+ {t:"Retroalimentación",c:"Evaluación",d:"Proceso continuo de mediación pedagógica que acompaña todas las fases del ciclo de indagación. Más que una devolución posterior al desempeño, es un diálogo sistemático que permite ajustar el proceso mientras ocurre.",f:"Anijovich y López López (2019)",v:["Evaluación formativa","Coevaluación","Rúbrica"]},
+ {t:"Rúbrica",c:"Evaluación",d:"Instrumento que describe los niveles de desempeño esperados. Se construye con el grupo en el momento de la estrategia, de modo que el estudiante conoce desde el inicio cómo será valorado. Prioriza la calidad del razonamiento sobre el formato elegido para comunicarlo.",f:"Estrategia de Atención por Ciclos (2026)",v:["Evaluación auténtica","Coevaluación","Estrategia","Desempeño observable"]},
+ {t:"Rutinas de pensamiento",c:"Evaluación",d:"Estrategia para hacer visible el proceso de pensamiento, desarrollada en el marco del proyecto Visible Thinking. Documentan cómo el estudiante razona, conecta ideas y resuelve problemas, y no únicamente qué entrega al final.",f:"Ritchhart, Church y Morrison (2011)",v:["Metacognición","Reflexión","Evidencia de aprendizaje"]},
+
+ {t:"Saberes, habilidades y actitudes",c:"Currículo",d:"Las dimensiones que toda competencia integra: conocer, que son los saberes; hacer, que son las habilidades para aplicar, crear y resolver; ser, que son las actitudes y valores; y convivir, que es la capacidad de relacionarse y construir comunidad.",f:"Corpoeducación (2026); Delors (1996)",v:["Competencia","Competencias sello","Desempeño observable"]},
+ {t:"Sesión pedagógica",c:"Caja de Herramientas",d:"Encuentro semanal presencial con una intensidad mínima de cinco horas, estructurado en tres momentos: activación, que dispone el cuerpo, la mente y el aula; desarrollo, que es el núcleo donde avanza el proyecto; y reflexión, que cierra dando sentido a lo vivido.",f:"Proyecto Educativo de la Educación Complementaria (2026)",v:["Experiencia de aprendizaje","Ciclo de indagación","Caja de Herramientas"]},
+ {t:"Situación movilizadora",c:"Currículo",d:"Situación que detona el proyecto y articula el propósito formativo con el contexto. Es el primer nivel de integración curricular, del que se derivan la selección de estrategias y los momentos de exploración, creación, interpretación y socialización.",f:"Estrategia de Atención por Ciclos (2026)",v:["Núcleo problémico","Propósito formativo","Ocasión"]},
+ {t:"Socialización",c:"Metodología",d:"Evidencia pública del proceso. Los estudiantes trascienden el aula y demuestran ante audiencias reales cómo transformaron su indagación en un producto capaz de dialogar con su comunidad. Activa de manera simultánea la comunicación, la colaboración y el liderazgo ético.",f:"Estrategia de Atención por Ciclos (2026)",v:["Puesta en escena","Proyecto de calidad","Competencias del siglo XXI"]},
+ {t:"SOLO",s:"Structure of Observed Learning Outcome",c:"Evaluación",d:"Taxonomía que gradúa la complejidad estructural de lo que el estudiante efectivamente produjo: uniestructural, multiestructural, relacional y abstracto ampliado. Opera después de la experiencia, al valorar la evidencia.",f:"Biggs y Collis (1982)",v:["Bloom","Marzano","Uniestructural","Abstracto ampliado"]},
+
+ {t:"Teatro",c:"Líneas",d:"Línea de Formación Artística centrada en el cuerpo, la voz, la escenoplástica y la dramaturgia para construir la acción dramática, a través del juego de roles y la puesta en escena.",f:"Mallas por líneas temáticas (2026)",v:["Formación Artística","Danza","Música","Artes Plásticas y Visuales"]},
+ {t:"Tecnologías emergentes",c:"Líneas",d:"Tecnologías de incorporación reciente que en NEOTECH permiten la tecnificación progresiva de las ideas del estudiante: IoT, domótica, robótica aplicada, inteligencia artificial y análisis de datos.",f:"NEOTECH, documento orientador",v:["NEOTECH","IoT","Prototipo"]},
+ {t:"Territorio ampliado",c:"Fundamentos",d:"Comprensión del territorio no solo como espacio físico, sino como el conjunto de intereses, saberes, prácticas culturales, experiencias y formas de relación con el entorno que configuran el contexto de aprendizaje. Es un criterio de diseño curricular.",f:"Estrategia de Atención por Ciclos (2026)",v:["Contexto auténtico","Aprendizaje situado","Núcleo problémico"]},
+ {t:"Territorios de indagación",c:"Líneas",d:"Los tres ámbitos que organizan el aprendizaje tecnológico en NEOTECH de manera progresiva y contextualizada: electrónica, programación y prototipado. Permiten comprender la tecnología como un sistema integrado y no como un conjunto de herramientas.",f:"NEOTECH, documento orientador",v:["NEOTECH","Pensamiento computacional","Prototipo"]},
+ {t:"Tiempo libre",c:"Marco institucional",d:"Escenario de aprendizaje vivo, activo y de elección, no espacio de entretenimiento pasivo. Esta distinción es el fundamento de la identidad pedagógica de la Educación Complementaria.",f:"Estrategia de Atención por Ciclos (2026)",v:["Educación Complementaria","Visión de formación"]},
+ {t:"Toma de decisiones responsable",c:"Socioemocional",d:"Competencia socioemocional priorizada en el Ciclo 4. Decisiones constructivas que consideran consecuencias personales y sociales: evaluación de consecuencias, consideración ética, análisis crítico de alternativas y asertividad ante la presión del grupo.",f:"CASEL (2020)",v:["CASEL","Conciencia social","Habilidades socioemocionales"]},
+ {t:"Trabajo colaborativo",c:"Metodología",d:"Organización del aprendizaje en equipos con roles definidos y responsabilidad compartida. Fortalece la corresponsabilidad y la comunicación, y es una de las condiciones que permiten que la exigencia cognitiva se traduzca en aprendizaje profundo.",f:"Estrategia de Atención por Ciclos (2026)",v:["ABP","Competencias del siglo XXI","Laboratorio de creación"]},
+ {t:"Trazabilidad curricular",c:"Currículo",d:"Posibilidad de verificar en cualquier momento qué competencia, qué saber estructurante y qué evidencia de aprendizaje se están movilizando en un proyecto. Es la función que cumple el núcleo problémico dentro del ABP.",f:"Estrategia de Atención por Ciclos (2026)",v:["Núcleo problémico","Malla curricular","Evidencia de aprendizaje"]},
+
+ {t:"Uniestructural",c:"Evaluación",d:"Primer nivel de la taxonomía SOLO. El estudiante maneja un solo aspecto relevante de la tarea. Es realista en los Ciclos 1 y 2.",f:"Biggs y Collis (1982)",v:["SOLO","Multiestructural","Relacional"]},
+
+ {t:"Visión de formación",c:"Marco institucional",d:"Primer componente del horizonte formativo. Se organiza en tres pilares: la pedagogía del tiempo libre como eje diferencial, la autonomía del facilitador en las decisiones pedagógicas, y la complementariedad y no duplicidad frente a la jornada escolar obligatoria.",f:"Estrategia de Atención por Ciclos (2026)",v:["Horizonte formativo","Tiempo libre","Perfil de egreso"]},
+
+ {t:"Zona de Desarrollo Próximo",c:"Fundamentos",d:"Distancia entre lo que el estudiante puede hacer solo y lo que logra con el apoyo de otro más capaz. Fundamenta que el acompañamiento del facilitador disminuya a medida que el estudiante desarrolla la capacidad de regular su propio aprendizaje.",f:"Vygotsky (1978)",v:["Andamiaje","Gradación del andamiaje","Facilitador"]}
+];
+
+const LETRAS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
+const norm = s => s.normalize("NFD").replace(/[̀-ͯ]/g,"").toUpperCase();
+const inicial = e => norm(e.t)[0];
+
+const elTroquel = document.getElementById("troquel");
+const elLista   = document.getElementById("lista");
+const elCapital = document.getElementById("capital");
+const elRotulo  = document.getElementById("rotulo");
+const elSub     = document.getElementById("subtitulo");
+const elConteo  = document.getElementById("conteo");
+const elFolioI  = document.getElementById("folio-izq");
+const elFolioD  = document.getElementById("folio-der");
+const elQ       = document.getElementById("q");
+
+let letraActiva = "A";
+let consulta = "";
+
+const conLetra = L => G.filter(e => inicial(e) === L);
+
+LETRAS.forEach(L => {
+  const b = document.createElement("button");
+  b.type = "button"; b.textContent = L; b.dataset.letra = L;
+  const n = conLetra(L).length;
+  b.disabled = n === 0;
+  b.setAttribute("aria-label", n ? `Letra ${L}, ${n} ${n===1?"término":"términos"}` : `Letra ${L}, sin términos`);
+  b.setAttribute("aria-pressed", String(L === letraActiva));
+  b.addEventListener("click", () => { consulta=""; elQ.value=""; letraActiva = L; pintar(); });
+  elTroquel.appendChild(b);
+});
+
+function resalta(txt, q){
+  if(!q) return txt;
+  const i = norm(txt).indexOf(norm(q));
+  if(i < 0) return txt;
+  return txt.slice(0,i) + "<mark>" + txt.slice(i, i+q.length) + "</mark>" + txt.slice(i+q.length);
+}
+
+// Un "ver también" puede nombrar la entrada por su título o por su sigla.
+const buscaEntrada = n => G.find(x => x.t === n) || G.find(x => x.s === n);
+
+function irA(nombre){
+  const e = buscaEntrada(nombre);
+  if(!e) return;
+  consulta = ""; elQ.value = "";
+  letraActiva = inicial(e);
+  pintar();
+  requestAnimationFrame(() => {
+    const dest = [...elLista.querySelectorAll(".entrada")].find(x => x.dataset.t === e.t);
+    if(dest){ dest.scrollIntoView({behavior:"smooth", block:"center"}); dest.querySelector("h3").focus?.(); }
+  });
+}
+
+function tarjeta(e){
+  const art = document.createElement("article");
+  art.className = "entrada"; art.dataset.t = e.t;
+  const fila = document.createElement("div");
+  fila.className = "titulo-fila";
+  fila.innerHTML = `<h3 tabindex="-1">${resalta(e.t, consulta)}</h3>`
+    + (e.s ? `<span class="sigla">${e.s}</span>` : "")
+    + `<span class="chip">${e.c}</span>`;
+  art.appendChild(fila);
+  const p = document.createElement("p");
+  p.innerHTML = resalta(e.d, consulta);
+  art.appendChild(p);
+  const pie = document.createElement("div");
+  pie.className = "pie-entrada";
+  pie.innerHTML = `<span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5.5A1.5 1.5 0 0 1 5.5 4H11v16H5.5A1.5 1.5 0 0 1 4 18.5z"></path><path d="M20 5.5A1.5 1.5 0 0 0 18.5 4H13v16h5.5a1.5 1.5 0 0 0 1.5-1.5z"></path></svg>${e.f}</span>`;
+  art.appendChild(pie);
+  if(e.v && e.v.length){
+    const vt = document.createElement("div");
+    vt.className = "vertambien";
+    vt.append("Ver también: ");
+    e.v.forEach((n, i) => {
+      const existe = !!buscaEntrada(n);
+      if(existe){
+        const b = document.createElement("button");
+        b.type="button"; b.textContent = n;
+        b.addEventListener("click", () => irA(n));
+        vt.appendChild(b);
+      } else { vt.append(n); }
+      if(i < e.v.length - 1) vt.append(" · ");
+    });
+    art.appendChild(vt);
+  }
+  return art;
+}
+
+function pintar(){
+  let items, titulo, rotulo, capital;
+  if(consulta.trim()){
+    const q = norm(consulta.trim());
+    items = G.filter(e => norm(e.t).includes(q) || norm(e.d).includes(q) || norm(e.c).includes(q) || (e.s && norm(e.s).includes(q)));
+    capital = "?"; rotulo = "Resultados de búsqueda";
+    titulo = items.length
+      ? `${items.length} ${items.length===1?"entrada":"entradas"} contienen “${consulta.trim()}”`
+      : `Ninguna entrada contiene “${consulta.trim()}”`;
+    [...elTroquel.children].forEach(b => b.setAttribute("aria-pressed","false"));
+  } else {
+    items = conLetra(letraActiva);
+    capital = letraActiva; rotulo = "Letra " + letraActiva;
+    titulo = items.length === 1 ? "1 término en esta letra" : `${items.length} términos en esta letra`;
+    [...elTroquel.children].forEach(b => b.setAttribute("aria-pressed", String(b.dataset.letra === letraActiva)));
+  }
+  elCapital.textContent = capital;
+  elRotulo.textContent = rotulo;
+  elSub.textContent = titulo;
+  elLista.textContent = "";
+  if(!items.length){
+    const v = document.createElement("p");
+    v.className = "vacio";
+    v.textContent = "Prueba con otra palabra, o elige una letra en el índice. La búsqueda también mira dentro de las definiciones.";
+    elLista.appendChild(v);
+  } else {
+    items.sort((a,b) => a.t.localeCompare(b.t,"es"));
+    items.forEach(e => elLista.appendChild(tarjeta(e)));
+  }
+  const letrasConTerminos = LETRAS.filter(L => conLetra(L).length).length;
+  elConteo.innerHTML = `<b>${G.length}</b> términos en <b>${letrasConTerminos}</b> letras`;
+  elFolioI.textContent = consulta.trim() ? "Búsqueda" : "Glosario · " + letraActiva;
+  elFolioD.innerHTML = `Estrategia de Atención por Ciclos · <b>2026</b>`;
+}
+
+elQ.addEventListener("input", () => { consulta = elQ.value; pintar(); });
+
+const raiz = document.documentElement;
+document.getElementById("tema").addEventListener("click", () => {
+  let act = raiz.getAttribute("data-theme");
+  if(!act) act = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+  raiz.setAttribute("data-theme", act === "dark" ? "light" : "dark");
+});
+
+pintar();
+</script>
+
+</body>
+</html>
